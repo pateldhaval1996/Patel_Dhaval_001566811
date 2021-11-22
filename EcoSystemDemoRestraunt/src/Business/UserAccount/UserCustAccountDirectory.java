@@ -12,49 +12,45 @@ import java.util.ArrayList;
 
 /**
  *
- * @author raunak
+ * @author dhaval
  */
-public class UserAccountDirectory {
+public class UserCustAccountDirectory {
     
-    private ArrayList<UserAccount> userAccountList;
+    private ArrayList<UserCustAccount> userAccountList;
 
-    public UserAccountDirectory() {
+    public UserCustAccountDirectory() {
         userAccountList = new ArrayList();
     }
 
-    public ArrayList<UserAccount> getUserAccountList() {
+    public ArrayList<UserCustAccount> getUserAccountList() {
         return userAccountList;
     }
     
-    public UserAccount authenticateUser(String username, String password){
-        for (UserAccount ua : userAccountList)
+    public UserCustAccount authenticateUser(String username, String password){
+        for (UserCustAccount ua : userAccountList)
             if (ua.getUsername().equals(username) && ua.getPassword().equals(password)){
                 return ua;
             }
         return null;
     }
     
-    public UserAccount createUserAccount(String username, String password, Employee employee, Role role){
-        UserAccount userAccount = new UserAccount();
+    
+    public UserCustAccount createCustAccount(String username, String password, Customer customer, String order){
+        UserCustAccount userAccount = new UserCustAccount();
         userAccount.setUsername(username);
         userAccount.setPassword(password);
-        userAccount.setEmployee(employee);
-        userAccount.setRole(role);
+        userAccount.setCustomer(customer);
+        userAccount.setOrder(order);
         userAccountList.add(userAccount);
         return userAccount;
     }
-   
     
     public boolean checkIfUsernameIsUnique(String username){
-        for (UserAccount ua : userAccountList){
+        for (UserCustAccount ua : userAccountList){
             if (ua.getUsername().equals(username))
                 return false;
         }
         return true;
-    }
-
-    public UserCustAccount createCustAccount(String username, String password, Customer customer, String order) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

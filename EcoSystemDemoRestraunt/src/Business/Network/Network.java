@@ -6,6 +6,7 @@
 package Business.Network;
 
 import Business.Enterprise.EnterpriseDirectory;
+import Business.Customer.CustomerDirectory;
 
 /**
  *
@@ -14,6 +15,7 @@ import Business.Enterprise.EnterpriseDirectory;
 public class Network {
     private String name;
     private EnterpriseDirectory enterpriseDirectory;
+    private CustomerDirectory customerDirectory;
     
     public Network(){
         enterpriseDirectory=new EnterpriseDirectory();
@@ -28,6 +30,10 @@ public class Network {
 
     public EnterpriseDirectory getEnterpriseDirectory() {
         return enterpriseDirectory;
+    }
+    
+    public CustomerDirectory getCoustomerDirectory() {
+        return customerDirectory;
     }
     
     @Override

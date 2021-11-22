@@ -13,20 +13,27 @@ import Business.WorkQueue.WorkQueue;
  *
  * @author raunak
  */
-public class UserAccount {
+public class UserCustAccount {
     
     private String username;
     private String password;
-    private Employee employee;
+    //private Employee employee;
     private Customer customer;
+    private String order;
     private Role role;
     private WorkQueue workQueue;
 
-    public UserAccount() {
+    public UserCustAccount() {
         workQueue = new WorkQueue();
     }
     
-    
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }    
     
     public String getUsername() {
         return username;
@@ -48,9 +55,6 @@ public class UserAccount {
         return role;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
     
     public void setCustomer(Customer customer) {
         this.customer = customer;
@@ -60,9 +64,6 @@ public class UserAccount {
         this.role = role;
     }
 
-    public Employee getEmployee() {
-        return employee;
-    }
     
     public Customer getCustomer() {
         return customer;
